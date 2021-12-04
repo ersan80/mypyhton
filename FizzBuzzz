@@ -1,0 +1,16 @@
+def FizzBuzz(n):
+  a = "Fizz"
+  b = "Buzz"
+  ab = "FizzBuzz"
+  liste = []
+  for i in range(1, n+1):
+    if i%3==0 and i%5==0:
+      liste.append([ab]) 
+    elif i%5 ==0:
+      liste.append([b])
+    elif i%3==0:
+      liste.append([a])
+    else:
+      liste.append([i])
+    
+  return liste
