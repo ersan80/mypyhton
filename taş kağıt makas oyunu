@@ -1,0 +1,41 @@
+import random
+import time
+print("""Taş makas Kağıt oyununa hoş geldiniz""")
+liste = ["TAŞ", "KAĞIT", "MAKAS"]
+Rasgele = random.choice(liste)
+# Çıkmak için "q" tuşuna basınız
+Player_hak = 3
+Rasgele_hak = 3
+while True:
+  Player = input("bir hareket seç :").upper()
+  Rasgele = random.choice(liste)
+  if Rasgele == Player :
+    print("Bilgileriniz Kontrol Ediliyor...")
+    time.sleep(3)
+    print("Berabere Kaldınız")
+    continue
+  else:
+    if Rasgele == "TAŞ" and Player == "KAĞIT":
+      Rasgele_hak -= 1
+      print("Rasgele nin Girdiği Değer{} olduğundan Player e 1 puan eklendi".format(Rasgele))
+    elif Rasgele == "TAŞ" and Player == "MAKAS":
+      Player_hak -= 1
+      print("Rasgele nin Girdiği Değer{} olduğundan Player e 1 puan eklendi".format(Rasgele))
+    elif Rasgele == "KAĞIT" and Player == "MAKAS":
+      Rasgele_hak -= 1
+      print("Rasgele nin Girdiği Değer{} olduğundan Player e 1 puan eklendi".format(Rasgele))
+    elif Rasgele == "KAĞIT" and Player == "TAŞ":
+      Player_hak -= 1
+      print("Rasgele nin Girdiği Değer{} olduğundan Player e 1 puan eklendi".format(Rasgele))
+    elif Rasgele == "MAKAS" and Player == "TAŞ":
+      Rasgele_hak -= 1
+      print("Rasgele nin Girdiği Değer{} olduğundan Player e 1 puan eklendi".format(Rasgele))
+    elif Rasgele == "MAKAS" and Player == "KAĞIT":
+      Player_hak -= 1
+      print("Rasgele nin Girdiği Değer{} olduğundan Player e 1 puan eklendi".format(Rasgele))
+  if Player_hak == 0:
+    print("Kazanan Rasgele")
+    break
+  elif Rasgele_hak == 0:
+    print("Kazanan Player")
+    break
