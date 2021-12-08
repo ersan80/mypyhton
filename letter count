@@ -1,0 +1,6 @@
+def harfhesapla ():
+  kullanıcı = input("bir kelime giriniz:")
+  sayı = dict()
+  for i in kullanıcı:
+    sayı[i] = kullanıcı.count(i)
+  return sayı
